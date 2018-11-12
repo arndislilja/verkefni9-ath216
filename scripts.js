@@ -1,23 +1,30 @@
 // const API_URL = '/example.json?domain=';
 const API_URL = 'https://apis.is/isnic?domain=';
 
-document.addEventListener
-('DOMContentLoaded', function () {
-  const domain = document.querySelector('.domains');
-
-  program.init(domains);
-});
-
 /**
  * Leit að lénum á Íslandi gegnum apis.is
  */
 const program = (() => {
   let domains;
 
+  funcion fetchData(domain) {
+    fetch(`${API_URL}${domain}`)
+      .then((response) => {
+        debugger;
+      })
+      .catch((error) => {
+        //TODO villumeðhöndlun
+        console.error(error);
+      } )
+  }
+
   function onSubmit(e) {
     e.preventDefault();
+    const input = e.target.querySelector('input');
 
-    console.log(e);
+    //TODO höndla tómastreng
+
+    fetchData(input.value);
   }
 
   function init(_domains) {
