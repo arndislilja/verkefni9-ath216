@@ -11,6 +11,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.3"
-  }
+    "browser-sync": "^2.26.3",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arndislilja/verkefni9-ath216.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arndislilja/verkefni9-ath216/issues"
+  },
+  "homepage": "https://github.com/arndislilja/verkefni9-ath216#readme"
 }
