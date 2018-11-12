@@ -7,13 +7,27 @@ const API_URL = 'https://apis.is/isnic?domain=';
 const program = (() => {
   let domains;
 
+  function displayError(error) {
+    const container = domains.querySelector('.results');
+
+    while (container.firstChild) {
+      container.removeChild(container.firstChild);
+    }
+
+    container.appendChild(document.createTextNode(error));
+  }
+
   funcion fetchData(domain) {
     fetch(`${API_URL}${domain}`)
       .then((response) => {
-        debugger;
+        if (response.ok) {
+          return response.json();
+        }
+
+        throw new Error('Villa við að sækja gögn')
       })
       .catch((error) => {
-        //TODO villumeðhöndlun
+        displayError('Lén er ekki skráð')
         console.error(error);
       } )
   }
