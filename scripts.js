@@ -17,8 +17,8 @@ const program = (() => {
     container.appendChild(document.createTextNode(error));
   }
 
-  funcion fetchData(domain) {
-    fetch(`${API_URL}${domain}`)
+  funcion fetchData(text) {
+    fetch(`${API_URL}${text}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -29,7 +29,7 @@ const program = (() => {
       .catch((error) => {
         displayError('Lén er ekki skráð')
         console.error(error);
-      } )
+      })
   }
 
   function onSubmit(e) {
