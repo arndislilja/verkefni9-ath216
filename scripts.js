@@ -1,6 +1,12 @@
 // const API_URL = '/example.json?domain=';
 const API_URL = 'https://apis.is/isnic?domain=';
 
+document.addEventListener('DOMContentLoaded', function() {
+  const domains = document.querySelector('.domains');
+
+  program.init(domains);
+});
+
 /**
  * Leit að lénum á Íslandi gegnum apis.is
  */
@@ -24,7 +30,10 @@ const program = (() => {
           return response.json();
         }
 
-        throw new Error('Villa við að sækja gögn')
+        throw new Error('Villa við að sækja gögn');
+      })
+      .then((data) => {
+        displayDomain(data.results);
       })
       .catch((error) => {
         displayError('Lén er ekki skráð')
